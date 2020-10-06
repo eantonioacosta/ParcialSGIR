@@ -124,13 +124,15 @@ Entonces	El sistema presentará el mensaje. "Productos registrados, total = 5"
     }
     /**
      * Escenario: HU1. SALIDA DE PRODUCTO COMO USUARIO QUIERO REGISTRAR LA
-     * SALIDA PRODUCTOS Criterios de aceptación: 2. En caso de un producto
-     * sencillo la cantidad de la salida se le disminuirá a la cantidad
-     * existente del producto.      *
+     * SALIDA PRODUCTOS 
+     * Criterios de aceptación: 
+     * 2. En caso de un producto sencillo la cantidad de la salida se le disminuirá a la cantidad
+     * existente del producto.      
      * Dado	Esta registrado en el inventario una gaseosa con el código “011” con
-     * 2 stock Cuando	Registre una salida de una gaseosa con el mismo código y
-     * stock 1 Entonces	El sistema presentará el mensaje. “No hay productos,
-     * debe ingresar por los menos 1 producto”
+     * 2 stock 
+     * Cuando	Registre una salida de una gaseosa con el mismo código y
+     * stock 1 
+     * Entonces	El sistema presentará el mensaje. “"Detalles Salida => 011 Stock = 1 /Final."”
      *
      */
     @Test
