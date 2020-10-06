@@ -7,17 +7,21 @@ public abstract class Producto {
     private String nombre;
     private double costo;
     private double precio;
-
+    private int stockProducto;
     
     public Producto() {
+        stockProducto = 1;
     }
 
-    public Producto(String codigo, String nombre, double costo, double precio) {
+    public Producto(String codigo, String nombre, double costo, double precio, int stockProducto) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.costo = costo;
         this.precio = precio;
+        this.stockProducto = stockProducto;
     }
+
+
 
     public double getPrecio() {
         return precio;
@@ -50,6 +54,25 @@ public abstract class Producto {
     public void setCosto(double costo) {
         this.costo = costo;
     }
+    public void entradaStock(int stock){
+
+        setStockProducto(getStockProducto()+stock);
+    }
+    public String salidaStock(int stock){
+        if(stock>this.stockProducto){
+            return "/No hay suficiente stock";
+        }
+        setStockProducto(getStockProducto()-stock);
+        return "";
+    }
     
     public abstract double getUtilidad();
+
+    public int getStockProducto() {
+        return stockProducto;
+    }
+
+    public void setStockProducto(int stockProducto) {
+        this.stockProducto = stockProducto;
+    }
 }

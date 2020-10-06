@@ -8,10 +8,12 @@ public class ProductoSimple extends Producto{
     public ProductoSimple() {
     }
 
-    public ProductoSimple(int tipoVenta, String codigo, String nombre, double costo, double precio) {
-        super(codigo, nombre, costo, precio);
+    public ProductoSimple(int tipoVenta, String codigo, String nombre, double costo, double precio, int stockProducto) {
+        super(codigo, nombre, costo, precio, stockProducto);
         this.tipoVenta = tipoVenta;
     }
+
+
 
 
 

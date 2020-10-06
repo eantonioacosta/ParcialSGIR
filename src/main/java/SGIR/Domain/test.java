@@ -12,8 +12,9 @@ package SGIR.Domain;
 public class test {
     
     public static void main(String[] args) {
-
-       
+//        VentaHuespedes venta = new VentaHuespedes();
+//        List<Producto> lista = new 
+//       
     }
            
 }
