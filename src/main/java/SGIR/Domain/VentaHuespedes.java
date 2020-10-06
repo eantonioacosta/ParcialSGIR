@@ -21,19 +21,20 @@ public class VentaHuespedes {
     }
     
     public String entradaProducto(ArrayList<Producto> lista){
-        if(sizeProductos()<=0){
+
+        if(lista.size()<=0){
             return "No hay productos, debe ingresar por los menos 1 producto";
         }
         lista.forEach((producto) -> { entradaProducto1(producto);});
-        return "Prodcutos registrados, total = "+sizeProductos();
+        return "Productos registrados, total = "+sizeProductos();
     }
     private void entradaProducto1(Producto producto){
         for (Producto producto1 : productos) {
             if(producto.getCodigo().equals(producto1.getCodigo())){
                 producto1.entradaStock(producto.getStockProducto());
             }
-            productos.add(producto);   
         }
+        productos.add(producto); 
     }
     
     public String SalidaProductos(ArrayList<Producto> lista){
@@ -41,10 +42,11 @@ public class VentaHuespedes {
         if(lista.size()<=0){
             return "No hay productos, debe ingresar por los menos 1 producto";
         }
-        lista.forEach((producto) -> { 
-            mensaje.concat(SalidaProductos1(producto));
-        });    
         
+        for (Producto producto : lista) {
+            mensaje = mensaje.concat(SalidaProductos1(producto));
+        }
+
         return mensaje+" /Final.";
         
     }

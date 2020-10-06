@@ -12,6 +12,13 @@ public class ProductoCompuesto extends Producto{
         this.Ingredientes = new ArrayList<>();
     }
 
+    public ProductoCompuesto(List<ProductoSimple> Ingredientes, String codigo, String nombre, double precio, int stockProducto) {
+        super(codigo, nombre, precio, stockProducto);
+        this.Ingredientes = Ingredientes;
+    }
+
+
+
     public ProductoCompuesto(List<ProductoSimple> Ingredientes) {
         this.Ingredientes = Ingredientes;
     }
