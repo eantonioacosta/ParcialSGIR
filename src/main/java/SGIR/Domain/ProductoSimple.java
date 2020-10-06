@@ -3,7 +3,7 @@ package SGIR.Domain;
 
 
 public class ProductoSimple extends Producto{
-    private int tipoVenta; // Directa o en Combo
+    private int tipoVenta; // 0 Directa o en 1 Combo
 
     public ProductoSimple() {
     }

@@ -6,12 +6,12 @@
 package SGIR.Domain;
 
 import java.util.ArrayList;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
@@ -22,25 +22,44 @@ public class VentaHuespedesTest {
     public VentaHuespedesTest() {
     }
     
-    @BeforeAll
+    @BeforeClass
     public static void setUpClass() {
     }
     
-    @AfterAll
+    @AfterClass
     public static void tearDownClass() {
     }
     
-    @BeforeEach
+    @Before
     public void setUp() {
     }
     
-    @AfterEach
+    @After
     public void tearDown() {
     }
 
     /**
-     * Test of entradaProducto method, of class VentaHuespedes.
+     * HU1. Como usuario quiero registrar una entrada Criterios de aceptación:
+     * 1. La cantidad de la entrada de debe ser mayor a 0 Dado	Tengo una lista
+     * de productos vacía Cuando	Registre una entrada con esta lista Entonces	El
+     * sistema presentará el mensaje. “No hay productos, debe ingresar por los
+     * menos 1 producto”
+     *
      */
+    @Test
+    public void entradaNoPuedeSerMenorCero() {
+        
+        ArrayList<Producto> lista = new ArrayList<>();
+        VentaHuespedes instance = new VentaHuespedes();
+        String expResult = "No hay productos, debe ingresar por los menos 1 producto";
+        String result = instance.entradaProducto(lista);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        if (!result.equals(expResult)) {
+            fail("The test case is a prototype.");
+        }
+    }
+    
     @Test
     public void testEntradaProducto() {
         System.out.println("entradaProducto");
@@ -50,36 +69,27 @@ public class VentaHuespedesTest {
         String result = instance.entradaProducto(lista);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        if (!result.equals(expResult)) {
+            fail("The test case is a prototype.");
+        }
     }
 
     /**
      * Test of SalidaProductos method, of class VentaHuespedes.
      */
-    @Test
-    public void testSalidaProductos() {
-        System.out.println("SalidaProductos");
-        ArrayList<Producto> lista = null;
-        VentaHuespedes instance = new VentaHuespedes();
-        String expResult = "";
-        String result = instance.SalidaProductos(lista);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testSalidaProductos() {
+//        System.out.println("SalidaProductos");
+//        ArrayList<Producto> lista = null;
+//        VentaHuespedes instance = new VentaHuespedes();
+//        String expResult = "";
+//        String result = instance.SalidaProductos(lista);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        if (!result.equals(expResult)) {
+//            fail("The test case is a prototype.");
+//        }
+//    }
 
-    /**
-     * Test of sizeProductos method, of class VentaHuespedes.
-     */
-    @Test
-    public void testSizeProductos() {
-        System.out.println("sizeProductos");
-        VentaHuespedes instance = new VentaHuespedes();
-        int expResult = 0;
-        int result = instance.sizeProductos();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
     
 }
